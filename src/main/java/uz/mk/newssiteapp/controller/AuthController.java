@@ -42,12 +42,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public HttpEntity<?> login(@Valid @RequestBody LoginDto loginDto) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
-        User user = (User) authentication.getPrincipal();
-        String token = jwtProvider.generateToken(user.getUsername(), user.getRole());
-//        ApiResponse response = authService.login(loginDto);
-//        return ResponseEntity.status(response.isStatus() ? 200 : 409).body(response);
-        return ResponseEntity.ok(token);
+        ApiResponse response = authService.login(loginDto);
+        return ResponseEntity.status(response.isStatus() ? 200 : 409).body(response);
     }
 
 }
