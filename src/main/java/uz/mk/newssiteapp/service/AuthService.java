@@ -43,7 +43,7 @@ public class AuthService implements UserDetailsService {
                 true
         );
 
-        User savedUser = userRepository.save(user);
+        userRepository.save(user);
         return new ApiResponse("Successfully registered", true);
     }
 

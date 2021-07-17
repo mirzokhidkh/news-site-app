@@ -21,5 +21,5 @@ public class UserDto {
     private String password;
 
     @NotNull(message = "role mustn't be empty")
-    private Integer roleId;
+    private Long roleId;
 }
