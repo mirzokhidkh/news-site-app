@@ -40,10 +40,12 @@ public class DataLoader implements CommandLineRunner {
 
             Role admin = roleRepository.save(new Role(
                     AppConstants.ADMIN,
-                    Arrays.asList(permissions),"owner of the system"));
+                    Arrays.asList(permissions),
+                    "owner of the system"));
             Role user = roleRepository.save(new Role(
                     AppConstants.USER,
-                    Arrays.asList(ADD_COMMENT, EDIT_COMMENT, DELETE_MY_COMMENT),"simple user"));
+                    Arrays.asList(ADD_COMMENT, EDIT_COMMENT, DELETE_MY_COMMENT),
+                    "simple user"));
 
             userRepository.save(new User(
                     "Admin",
