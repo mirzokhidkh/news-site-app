@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/User")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
